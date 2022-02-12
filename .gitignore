@@ -1,3 +1,4 @@
 .DS_Store
 wordlist2.js
 wordlist3.js
+node_modules/*
