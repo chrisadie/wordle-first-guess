@@ -41,8 +41,9 @@ You should see the following appear:
 These are the best ten guesses to use. The number is the score from the
 algorithm which determines what is "best".
 
-The wordlist provided is `wordlist1.js`, and is not the actual wordlist used by
-the game! (The game's wordlist has significantly fewer words that end in 's'.)
+The wordlist provided is `wordlist1.js`, and (for copyright reasons) is *not*
+the actual wordlist used by the game! (The game's real wordlist has significantly
+fewer words that end in 's'.)
 
 You can replace `wordlist1.js` by the word list from the game to get the
 real answer - **the best guess to start Wordle with** - , which is:
