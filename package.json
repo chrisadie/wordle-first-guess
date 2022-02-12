@@ -1,0 +1,20 @@
+{
+  "name": "wordle-first-guess",
+  "version": "1.0.0",
+  "description": "Which word is best to start with in wordle?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "best-guesses": "node ./index.js | sort -r -g | head"
+  },
+  "author": {
+    "name": "Chris Adie",
+    "email": "chris.adie@googlemail.com"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "wordle"
+  ],
+  "license": "Apache-2.0"
+}
