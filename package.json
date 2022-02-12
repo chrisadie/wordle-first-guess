@@ -1,6 +1,6 @@
 {
   "name": "wordle-first-guess",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Which word is best to start with in wordle?",
   "main": "index.js",
   "scripts": {
