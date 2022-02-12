@@ -1,11 +1,13 @@
 # wordle-first-guess
-A Node.js program to determine the best starting word for Wordle
+A Node.js program to determine the best starting guess for Wordle
 
 ## Introduction
 The online game [Wordle](https://www.nytimes.com/games/wordle/index.html) starts
-by having the player guess a five-letter word given no information about the target
+by the player guessing a five-letter word given no information about the target
 word. This program analyses the Wordle word list to determine which initial
 guess is most likely to deliver helpful information about the target.
+
+The answer is below!
 
 ## Install
 The code is available as an npm module. To install it, create a directory called
@@ -40,4 +42,9 @@ These are the best ten guesses to use. The number is the score from the
 algorithm which determines what is "best".
 
 The wordlist provided is `wordlist1.js`, and is not the actual wordlist used by
-the game! The game's wordlist has significantly fewer words that end in 's'.
+the game! (The game's wordlist has significantly fewer words that end in 's'.)
+
+You can replace `wordlist1.js` by the word list from the game to get the
+real answer - **the best guess to start Wordle with** - , which is:
+
+> ***STARE***
