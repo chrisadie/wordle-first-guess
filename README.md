@@ -10,16 +10,17 @@ guess is most likely to deliver helpful information about the target.
 The answer is below!
 
 ## Install
-The code is available as an npm module. To install it, create a directory called
-`wordle-first-guess` and execute the following from within that directory:
+The code is available as an npm module. To install it, execute the following
+from within your home directory:
 
 ```
 npm install wordle-first-guess
 ```
 ## Usage
-To run the program, use the following command:
+To run the program, use the following commands:
 
 ```
+cd ~/.node_modules/wordle-first-guess
 npm run best-guesses
 ```
 
@@ -48,4 +49,4 @@ fewer words that end in 's'.)
 You can replace `wordlist1.js` by the word list from the game to get the
 real answer - **the best guess to start Wordle with** - , which is:
 
-> ***STARE***
+***STARE***
