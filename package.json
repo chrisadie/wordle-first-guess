@@ -11,6 +11,10 @@
     "name": "Chris Adie",
     "email": "chris.adie@googlemail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisadie/wordle-first-guess.git"
+  },
   "dependencies": {
   },
   "keywords": [
