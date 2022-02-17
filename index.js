@@ -1,9 +1,22 @@
+//
 // Work out the best starting word for Wordle
+//
 
-const wordList = require('./wordlist1');
-const maxWords = wordList.length;
-const wordLength = wordList[0].length;
-const greenWeight = 2; // Weight of green over gold
+// Files containing word lists
+const example = 'example';
+const answerFile = './'+example+'answerlist';
+const guessFile = './'+example+'guesslist';
+
+// Load the word lists
+const answerList = require(answerFile);
+const guessList = require(guessFile);
+const wordLength = answerList[0].length;
+
+// Weight of green over gold
+const greenWeight = 2;
+
+// Letters which invalidate a candidate
+const invalidLetters = []; // "soare".split("");
 
 // Collect the arguments, if any
 var candidate = "";
@@ -24,16 +37,22 @@ if (process.argv.length>=4) {
 	}
 }
 
-// Depending on arguments, calculare the score(s)
+// Depending on arguments, calculate the score(s)
 if (candidate=="") {
-	// Use each word from the wordList in turn as the candidate
-	for (let i = 0; i < maxWords; i++) {
-		console.log(cumulativeScore(wordList[i]) + " " + wordList[i]);
+	// Use each word from the answer list in turn as the candidate
+	let n = answerList.length;
+	for (let i = 0; i < n; i++) {
+		if (eligibleCandidate(answerList[i])) console.log(cumulativeScore(answerList[i],answerList) + " " + answerList[i]);
+	}
+	// Now go through the guess list
+	n = guessList.length;
+	for (let i = 0; i < n; i++) {
+		if (eligibleCandidate(guessList[i])) console.log(cumulativeScore(guessList[i],answerList) + " " + guessList[i]);
 	}
 } else
 if (testword=="") {
 	// Compare candidate against the wordList
-	console.log(cumulativeScore(candidate) + " " + candidate);
+	console.log(cumulativeScore(candidate,answerList) + " " + candidate);
 } else {
 	// Compare candidate against the supplied testword
 	console.log(computeScore(candidate,testword) + " " + candidate + " " + testword);
@@ -52,11 +71,12 @@ function usage() {
 	process.exit();
 }
 
-// Score the candidate against the entire wordList
-function cumulativeScore(cand) {
+// Score the candidate against the given wordList
+function cumulativeScore(cand,wl) {
 	let score = 0;
+	let maxWords = wl.length;
 	for (let i = 0; i < maxWords; i++) {
-		score += computeScore(cand,wordList[i]);
+		score += computeScore(cand,wl[i]);
 	}
 	return score;
 }
@@ -92,4 +112,12 @@ function computeScore(cand,word) {
 		}
 	}
 	return score;
+}
+
+// Candidate is ineligible if it contains invalid letters
+function eligibleCandidate(cand) {
+	for (let i = 0; i<invalidLetters.length; i++) {
+		if (cand.search(invalidLetters[i])>=0) return false;
+	}
+	return true;
 }

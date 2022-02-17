@@ -1,4 +1,4 @@
 .DS_Store
-wordlist2.js
-wordlist3.js
+answerlist.js
+guesslist.js
 node_modules/*
