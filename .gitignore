@@ -1,4 +1,5 @@
 .DS_Store
 answerlist.js
 guesslist.js
+spanish*.js
 node_modules/*
