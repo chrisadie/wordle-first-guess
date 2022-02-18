@@ -54,3 +54,8 @@ lists from the game to get the
 real answer - **the best guess to start Wordle with** - which is:
 
 ***SOARE***
+
+For the [Spanish version](https://wordle.danielfrg.com) of Wordle, it is:
+
+***AIREO***
+
